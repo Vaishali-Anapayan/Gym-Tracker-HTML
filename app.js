@@ -42,6 +42,7 @@ function save_arms_data() {
         assisted_chin_up: arms_data.assisted_chin_up,
         assisted_dips: arms_data.assisted_dips
     };
+    alert(arms_data.chest_press);
     arms_information.push(arms_day);
     localStorage.setItem("arms_day", JSON.stringify(arms_information));
 }
