@@ -2,6 +2,7 @@
 // creating an array to store my arms day objects
 var selected_arms = null;
 var arms_data = {};
+let arms_information = [];
 function arms_day_submit(e) {
     event.preventDefault();
     var form_data = read_log_data();
@@ -27,9 +28,9 @@ function read_log_data() {
 }
 // save the data local storage
 function save_arms_data() {
-    let arms_information = JSON.parse(localStorage.getItem("arms_day"));
+    arms_information = JSON.parse(localStorage.getItem("arms_day"));
     if (localStorage.getItem("arms_day") == null) {
-        let arms_information = [];
+        arms_information = [];
     }
     let arms_day = {
         chest_press: arms_data.chest_press,
@@ -386,27 +387,27 @@ function reveal_history() {
     // ARMS DAY
     // let arms_information = [];
     // localStorage.setItem("arms_day", JSON.stringify(arms_information));
-    let arms_information = JSON.parse(localStorage.getItem("arms_day"));
+    let arms_info = JSON.parse(localStorage.getItem("arms_day"));
     var table = document.getElementById("arms_history_log").getElementsByTagName("tbody")[0];
     // for loop to go through the amount of objects existing
-    for (let i = 0; i < arms_information.length; i++) {
+    for (let i = 0; i < arms_info.length; i++) {
         var new_row = table.insertRow(table.length);
         var cell1 = new_row.insertCell(0);
-            cell1.innerHTML = arms_information[i].chest_press;
+            cell1.innerHTML = arms_info[i].chest_press;
         var cell2 = new_row.insertCell(1);
-            cell2.innerHTML = arms_information[i].shoulder_press;
+            cell2.innerHTML = arms_info[i].shoulder_press;
         var cell3 = new_row.insertCell(2);
-            cell3.innerHTML = arms_information[i].row_rear_deltoid;
+            cell3.innerHTML = arms_info[i].row_rear_deltoid;
         var cell4 = new_row.insertCell(3);
-            cell4.innerHTML = arms_information[i].pull_down;
+            cell4.innerHTML = arms_info[i].pull_down;
         var cell5 = new_row.insertCell(4);
-            cell5.innerHTML = arms_information[i].rear_deltoid;
+            cell5.innerHTML = arms_info[i].rear_deltoid;
         var cell6 = new_row.insertCell(5);
-            cell6.innerHTML = arms_information[i].pectoral_fly;
+            cell6.innerHTML = arms_info[i].pectoral_fly;
         var cell7 = new_row.insertCell(6);
-            cell7.innerHTML = arms_information[i].assisted_chin_up;
+            cell7.innerHTML = arms_info[i].assisted_chin_up;
         var cell8 = new_row.insertCell(7);
-            cell8.innerHTML = arms_information[i].assisted_dips;
+            cell8.innerHTML = arms_info[i].assisted_dips;
     }
 
     // LEGS DAY
