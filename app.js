@@ -28,6 +28,9 @@ function read_log_data() {
 // save the data local storage
 function save_arms_data() {
     let arms_information = JSON.parse(localStorage.getItem("arms_day"));
+    if (localStorage.getItem("arms_day") == null) {
+        let arms_information = [];
+    }
     let arms_day = {
         chest_press: arms_data.chest_press,
         shoulder_press: arms_data.shoulder_press,
@@ -139,6 +142,9 @@ function read_legs_data() {
 // save the data local storage
 function save_legs_data() {
     let legs_information = JSON.parse(localStorage.getItem("legs_day"));
+    if (localStorage.getItem("legs_day") == null) {
+        let legs_information = [];
+    }
     let legs_day = {
         seated_leg_curl: legs_data.seated_leg_curl,
         leg_extension: legs_data.leg_extension,
@@ -239,8 +245,10 @@ function read_treadmill_data() {
 }
 // save the data local storage
 function save_treadmill_data() {
-    // let treadmill_information = [];
     let treadmill_information = JSON.parse(localStorage.getItem("treadmill_day"));
+    if (localStorage.getItem("treadmill_day") == null) {
+        let treadmill_information = [];
+    }
     let treadmill_day = {
         distance: treadmill_data.distance,
         time: treadmill_data.time,
@@ -317,8 +325,10 @@ function read_stair_master_data() {
 }
 // save the data local storage
 function save_stair_master_data() {
-    let stair_master_information = [];
-    //let stair_master_information = JSON.parse(localStorage.getItem("stair_master_day"));
+    let stair_master_information = JSON.parse(localStorage.getItem("stair_master_day"));
+    if (localStorage.getItem("stair_master_day") == null) {
+        let stair_master_information = [];
+    }
     let stair_master_day = {
         steps: stair_master_data.steps,
         stair_time: stair_master_data.stair_time,
