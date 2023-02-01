@@ -119,6 +119,7 @@ function reset_arms() {
 // LEGS DAY
 var legs_data = {};
 var selected_legs = null;
+let legs_information = [];
 function legs_day_submit(e) {
     event.preventDefault();
     var form_data = read_legs_data();
@@ -143,9 +144,9 @@ function read_legs_data() {
 }
 // save the data local storage
 function save_legs_data() {
-    let legs_information = JSON.parse(localStorage.getItem("legs_day"));
+    legs_information = JSON.parse(localStorage.getItem("legs_day"));
     if (localStorage.getItem("legs_day") == null) {
-        let legs_information = [];
+        legs_information = [];
     }
     let legs_day = {
         seated_leg_curl: legs_data.seated_leg_curl,
@@ -227,6 +228,7 @@ function reset_legs() {
 // TREADMILL
 var treadmill_data = {};
 var selected_treadmill = null;
+let treadmill_information = [];
 function treadmill_submit(e) {
     event.preventDefault();
     var form_data = read_treadmill_data();
@@ -247,9 +249,9 @@ function read_treadmill_data() {
 }
 // save the data local storage
 function save_treadmill_data() {
-    let treadmill_information = JSON.parse(localStorage.getItem("treadmill_day"));
+    treadmill_information = JSON.parse(localStorage.getItem("treadmill_day"));
     if (localStorage.getItem("treadmill_day") == null) {
-        let treadmill_information = [];
+        treadmill_information = [];
     }
     let treadmill_day = {
         distance: treadmill_data.distance,
@@ -307,6 +309,7 @@ function reset_treadmill() {
 // STAIR MASTER
 var stair_master_data = {};
 var selected_stair_master = null;
+let stair_master_information = [];
 function stair_master_submit(e) {
     event.preventDefault();
     var form_data = read_stair_master_data();
@@ -327,9 +330,9 @@ function read_stair_master_data() {
 }
 // save the data local storage
 function save_stair_master_data() {
-    let stair_master_information = JSON.parse(localStorage.getItem("stair_master_day"));
+    stair_master_information = JSON.parse(localStorage.getItem("stair_master_day"));
     if (localStorage.getItem("stair_master_day") == null) {
-        let stair_master_information = [];
+        stair_master_information = [];
     }
     let stair_master_day = {
         steps: stair_master_data.steps,
@@ -414,56 +417,56 @@ function reveal_history() {
     // LEGS DAY
     // let legs_information = [];
     // localStorage.setItem("legs_day", JSON.stringify(legs_information));
-    let legs_information = JSON.parse(localStorage.getItem("legs_day"));
+    let legs_info = JSON.parse(localStorage.getItem("legs_day"));
     var table = document.getElementById("legs_history_log").getElementsByTagName("tbody")[0];
     // for loop to go through the amount of objects existing
-    for (let i = 0; i < legs_information.length; i++) {
+    for (let i = 0; i < legs_info.length; i++) {
         var new_row = table.insertRow(table.length);
         var cell1 = new_row.insertCell(0);
-            cell1.innerHTML = legs_information[i].seated_leg_curl;
+            cell1.innerHTML = legs_info[i].seated_leg_curl;
         var cell2 = new_row.insertCell(1);
-            cell2.innerHTML = legs_information[i].leg_extension;
+            cell2.innerHTML = legs_info[i].leg_extension;
         var cell3 = new_row.insertCell(2);
-            cell3.innerHTML = legs_information[i].seated_leg_press;
+            cell3.innerHTML = legs_info[i].seated_leg_press;
         var cell4 = new_row.insertCell(3);
-            cell4.innerHTML = legs_information[i].hip_abductor_out;
+            cell4.innerHTML = legs_info[i].hip_abductor_out;
         var cell5 = new_row.insertCell(4);
-            cell5.innerHTML = legs_information[i].hip_abductor_in;
+            cell5.innerHTML = legs_info[i].hip_abductor_in;
         var cell6 = new_row.insertCell(5);
-            cell6.innerHTML = legs_information[i].hip_thrusts;
+            cell6.innerHTML = legs_info[i].hip_thrusts;
         var cell7 = new_row.insertCell(6);
-            cell7.innerHTML = legs_information[i].bulgarian_split_squats;
+            cell7.innerHTML = legs_info[i].bulgarian_split_squats;
     }
 
     // TREADMILL
     // let treadmill_information = [];
     // localStorage.setItem("treadmill_day", JSON.stringify(treadmill_information));
-    let treadmill_information = JSON.parse(localStorage.getItem("treadmill_day"));
+    let treadmill_info = JSON.parse(localStorage.getItem("treadmill_day"));
     var treadmill_table = document.getElementById("treadmill_history_log").getElementsByTagName("tbody")[0];
     // for loop to go through the amount of objects existing
-    for (let i = 0; i < treadmill_information.length; i++) {
+    for (let i = 0; i < treadmill_info.length; i++) {
         var new_row = treadmill_table.insertRow(treadmill_table.length);
         var cell1 = new_row.insertCell(0);
-            cell1.innerHTML = treadmill_information[i].distance;
+            cell1.innerHTML = treadmill_info[i].distance;
         var cell2 = new_row.insertCell(1);
-            cell2.innerHTML = treadmill_information[i].time;
+            cell2.innerHTML = treadmill_info[i].time;
         var cell3 = new_row.insertCell(2);
-            cell3.innerHTML = treadmill_information[i].average_pace;
+            cell3.innerHTML = treadmill_info[i].average_pace;
     }
 
     // STAIR MASTER
     // let stair_master_information = [];
     // localStorage.setItem("stair_master_day", JSON.stringify(stair_master_information));
-    let stair_master_information = JSON.parse(localStorage.getItem("stair_master_day"));
+    let stair_master_info = JSON.parse(localStorage.getItem("stair_master_day"));
     var table = document.getElementById("stair_master_history_log").getElementsByTagName("tbody")[0];
     // for loop to go through the amount of objects existing
-    for (let i = 0; i < stair_master_information.length; i++) {
+    for (let i = 0; i < stair_master_info.length; i++) {
         var new_row = table.insertRow(table.length);
         var cell1 = new_row.insertCell(0);
-            cell1.innerHTML = stair_master_information[i].steps;
+            cell1.innerHTML = stair_master_info[i].steps;
         var cell2 = new_row.insertCell(1);
-            cell2.innerHTML = stair_master_information[i].stair_time;
+            cell2.innerHTML = stair_master_info[i].stair_time;
         var cell3 = new_row.insertCell(2);
-            cell3.innerHTML = stair_master_information[i].stair_pace;
+            cell3.innerHTML = stair_master_info[i].stair_pace;
     }
 }
