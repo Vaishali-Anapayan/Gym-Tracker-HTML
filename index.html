@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gym Tracker</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+
+
+
+
+        <!--NAVBAR-->
+        <nav class="navbar">
+            <div class="navbar_container">
+                <a id="navbar_logo">
+                    Gym Tracker
+                </a>
+                <div id="mobile_menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar_menu">
+                    <li class="navbar_item">
+                        <a href="/" class="navbar_links">
+                            Desktop Display
+                        </a>
+                    </li>
+                    <li class="navbar_item">
+                        <a href="/log_history.html" class="navbar_links">
+                            History Log
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+
+
+
+        <!--LIFTING TABLE-->
+        <table>
+            <tr>
+                <th id="tables">Lifting</th>
+            </tr>
+            
+            
+            
+            <tr>
+            <!--ARMS SECTION-->
+                <td id="sectioning">
+                    <table>
+                        <form autocomplete="off" onsubmit="arms_day_submit()">
+                            <tr>
+                                <th id="subtitle">Arms Day</th>
+                            </tr>
+                            <tr>
+                                <th>Machine</th>
+                                <th>Weight</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="chest_press"> Chest Press</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="chest_press" id="chest_press" placeholder="lbs">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="shoulder_press"> Shoulder Press</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="shoulder_press" id="shoulder_press" placeholder="lbs">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="row_rear_deltoid"> Row/Rear Deltoid</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="row_rear_deltoid" id="row_rear_deltoid" placeholder="lbs">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="pull_down"> Pull-Down</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="pull_down" id="pull_down" placeholder="lbs">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="rear_deltoid"> Rear Deltoid</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="rear_deltoid" id="rear_deltoid" placeholder="lbs">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="pectoral_fly"> Pectoral Fly</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="pectoral_fly" id="pectoral_fly" placeholder="lbs">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="assisted_chin_up"> Assisted Chin-Up</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="assisted_chin_up" id="assisted_chin_up" placeholder="lbs">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="assisted_dips"> Assisted Dips</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="assisted_dips" id="assisted_dips" placeholder="lbs">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td> 
+                                    <div>
+                                        <input type="submit" value="Submit">
+                                        <input type="reset" value="Reset">
+                                    </div>
+                                </td>
+                            </tr>
+                        </form>
+                    </table>
+                </td>
+ 
+
+
+            <!--LEGS SECTION-->
+                <td id="sectioning" valign="top">
+                    <table >
+                        <form autocomplete="off" onsubmit="legs_day_submit()">
+                            <tr>
+                                <th id="subtitle">Legs Day</th>
+                            </tr>
+                            <tr>
+                                <th>Machine</th>
+                                <th>Weight</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="seated_leg_curl"> Seated Leg Curl</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="seated_leg_curl" id="seated_leg_curl" placeholder="lbs">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="leg_extension"> Leg Extension</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="leg_extension" id="leg_extension" placeholder="lbs">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="seated_leg_press"> Seated Leg Press</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="seated_leg_press" id="seated_leg_press" placeholder="lbs">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="hip_abductor_out"> Hip Abductor (Out)</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="hip_abductor_out" id="hip_abductor_out" placeholder="lbs">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="hip_abductor_in"> Hip Abductor (In)</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="hip_abductor_in" id="hip_abductor_in" placeholder="lbs">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="hip_thrusts"> Hip Thrusts</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="hip_thrusts" id="hip_thrusts" placeholder="lbs">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="bulgarian_split_squats"> Bulgarian Split Squats</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="bulgarian_split_squats" id="bulgarian_split_squats" placeholder="lbs">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td> 
+                                    <div>
+                                        <input type="submit" value="Submit">
+                                        <input type="reset" value="Reset">
+                                    </div>
+                                </td>
+                            </tr>
+                        </form>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+        <!--CARDIO TABLE-->
+        <table>
+            <tr>
+                <th id="tables">Cardio</th>
+            </tr>
+            <tr>
+
+
+
+                <!--TREADMILL SECTION-->
+                <td id="sectioning">
+                    <table>
+                        <form autocomplete="off" onsubmit="treadmill_submit()">
+                            <tr>
+                                <th id="subtitle">Treadmill</th>
+                            </tr>
+                            <tr>
+                                <th>Measurements</th>
+                                <th>Statistic</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="distance"> Distance</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="distance" id="distance" placeholder="km">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="time"> Time</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="time" id="time" placeholder="00:00">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="average_pace"> Average Pace</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="average_pace" id="average_pace" placeholder="km/h">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td> 
+                                    <div>
+                                        <input type="submit" value="Submit">
+                                        <input type="reset" value="Reset">
+                                    </div>
+                                </td>
+                            </tr>
+                        </form>
+                    </table>
+                </td>
+
+
+
+                <!--STAIR MASTER SECTION-->
+                <td id="sectioning" valign="top">
+                    <table>
+                        <form autocomplete="off" onsubmit="stair_master_submit()">
+                            <tr>
+                                <th id="subtitle">Stair Master</th>
+                            </tr>
+                            <tr>
+                                <th>Measurement</th>
+                                <th>Statistic</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="steps"> Steps</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="steps" id="steps" placeholder="#">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="stair_time"> Time</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="stair_time" id="stair_time" placeholder="00:00">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="stair_pace"> Average Pace</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="stair_pace" id="stair_pace" placeholder="#/min">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td> 
+                                    <div>
+                                        <input type="submit" value="Submit">
+                                        <input type="reset" value="Reset">
+                                    </div>
+                                </td>
+                            </tr>
+                        </form>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+        <!--ARMS DAY DISPLAY-->
+        <table class="log" id="arms_log">
+            <thead>
+                <tr>
+                    <th>Arms Day</th>
+                </tr>
+                <tr>
+                    <td>Chest Press</td>
+                    <td>Shoulder Press</td>
+                    <td>Row/Rear Deltoid</td>
+                    <td>Pull-Down</td>
+                    <td>Rear Deltoid</td>
+                    <td>Pectoral Fly</td>
+                    <td>Assisted Chin-Up</td>
+                    <td>Assisted Dips</td>
+                    <td>Options</td>
+                </tr>
+            </thead>
+            <tbody> </tbody>
+        </table>
+
+
+
+        <!--LEGS DAY DISPLAY-->
+        <table class="log" id="legs_log">
+            <thead>
+                <tr>
+                    <th>Legs Day</th>
+                </tr>
+                <tr>
+                    <td>Seated Leg Curl</td>
+                    <td>Leg Extension</td>
+                    <td>Seated Leg Press</td>
+                    <td>Hip Abductor (Out)</td>
+                    <td>Hip Abductor (In)</td>
+                    <td>Hip Thrusts</td>
+                    <td>Bulgarian Split Squats</td>
+                    <td>Options</td>
+                </tr>
+            </thead>
+            <tbody> </tbody>
+        </table>
+
+
+
+        <!--TREADMILL DISPLAY-->
+        <table class="log" id="treadmill_log">
+            <thead>
+                <tr>
+                    <th>Treadmill</th>
+                </tr>
+                <tr>
+                    <td id="cardio">Distance (km)</td>
+                    <td id="cardio">Time (00:00)</td>
+                    <td id="cardio">Average Pace (km/h)</td>
+                    <td id="cardio">Options</td>
+                </tr>
+            </thead>
+            <tbody> </tbody>
+        </table>
+
+
+
+        <!--STAIR MASTER DISPLAY-->
+        <table class="log" id="stair_master_log">
+            <thead>
+                <tr>
+                    <th>Stair Master</th>
+                </tr>
+                <tr>
+                    <td id="cardio">Steps (#)</td>
+                    <td id="cardio">Time (00:00)</td>
+                    <td id="cardio">Average Pace (#/min)</td>
+                    <td id="cardio">Options</td>
+                </tr>
+            </thead>
+            <tbody> </tbody>
+        </table>
+
+
+
+
+        
+        <script src="app.js"> </script> 
+    </body>
+</html>

@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.navbar {
+    background: #6d6875;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar_container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#navbar_logo {
+    background-color: #d4a373;
+    background-image: linear-gradient(to top, #ffcdb2 0%, #e5989b 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.navbar_menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar_item {
+    height: 80px;
+}
+
+.navbar_links {
+    color: #ffcdb2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+}
+
+table {
+    width: 80%;
+    margin: 40px auto;
+    background: #6d6875;
+    padding: 4px 4px;
+}
+
+th {
+    color: #ffcdb2;
+    text-align: left;
+    font-size: 20px;
+}
+
+#subtitle {
+    font-size: 25px;
+}
+
+td {
+    color: #ffcdb2;
+    text-align: left;
+}
+
+table.log {
+    width: 80%;
+    margin: 40px auto;
+    background: #6d6875;
+    padding: 4px 4px;
+}
+
+input[type="text"] {
+    width: 40%;
+    padding: 3px 3px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 2px solid #ffcdb2;
+    border-radius: 2px;
+}
+
+input[type="submit"], input[type="reset"] {
+    width: 20%;
+    background: #e5989b;
+    padding: 3px 3px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 2px solid #ffcdb2;
+    border-radius: 2px;
+    color: #6d6875;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover{
+    background: #b5838d;
+}
+
+button{
+    width: 7.5%;
+    background: #e5989b;
+    padding: 3px 3px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 2px solid #ffcdb2;
+    border-radius: 2px;
+    color: #6d6875;
+}
+
+button:hover {
+    background: #b5838d;
+}
+
+#sectioning {
+    width: 50%;
+}
+
+#tables {
+    font-size: 30px;
+    padding-top: 30px;
+    padding-left: 65px;
+}
+
+#cardio {
+    width: 25%;
+}
+
+#options {
+    width: 40%;
+}
+
+.reveal_log {
+    padding-left: 120px; 
+    padding-top: 30px;
+}

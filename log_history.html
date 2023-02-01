@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<script> type="text/javascript"; src="./app.js"</script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+
+
+
+     <!--NAVBAR-->
+     <nav class="navbar">
+        <div class="navbar_container">
+            <a href="/" id="navbar_logo">
+                Gym Tracker
+            </a>
+            <div class="narbar_toggle" id="mobile_menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="/" class="navbar_links">
+                        Desktop Display
+                    </a>
+                </li>
+                <li class="navbar_item">
+                    <a href="/log_history.html" class="navbar_links">
+                        History Log
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="reveal_log" >
+        <button onclick="reveal_history()">Reveal Logs</button>
+    </div>
+
+
+
+
+
+    <!--ARMS DAY DISPLAY-->
+    <table class="log" id="arms_history_log">
+        <thead>
+            <tr>
+                <th>Arms Day</th>
+            </tr>
+            <tr>
+                <td>Chest Press</td>
+                <td>Shoulder Press</td>
+                <td>Row/Rear Deltoid</td>
+                <td>Pull-Down</td>
+                <td>Rear Deltoid</td>
+                <td>Pectoral Fly</td>
+                <td>Assisted Chin-Up</td>
+                <td>Assisted Dips</td>
+            </tr>
+        </thead>
+        <tbody> </tbody>
+    </table>
+
+
+
+
+
+        <!--LEGS DAY DISPLAY-->
+        <table class="log" id="legs_history_log">
+            <thead>
+                <tr>
+                    <th>Legs Day</th>
+                </tr>
+                <tr>
+                    <td>Seated Leg Curl</td>
+                    <td>Leg Extension</td>
+                    <td>Seated Leg Press</td>
+                    <td>Hip Abductor (Out)</td>
+                    <td>Hip Abductor (In)</td>
+                    <td>Hip Thrusts</td>
+                    <td>Bulgarian Split Squats</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody> 
+            </tbody>
+        </table>
+
+
+
+
+
+        <!--TREADMILL DISPLAY-->
+        <table class="log" id="treadmill_history_log">
+            <thead>
+                <tr>
+                    <th>Treadmill</th>
+                </tr>
+                <tr>
+                    <td id="cardio">Distance (km)</td>
+                    <td id="cardio">Time (00:00)</td>
+                    <td id="cardio">Average Pace (km/h)</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody> </tbody>
+        </table>
+
+
+
+
+
+        <!--STAIR MASTER DISPLAY-->
+        <table class="log" id="stair_master_history_log">
+            <thead>
+                <tr>
+                    <th>Stair Master</th>
+                </tr>
+                <tr>
+                    <td id="cardio">Steps (#)</td>
+                    <td id="cardio">Time (00:00)</td>
+                    <td id="cardio">Average Pace (#/min)</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody> </tbody>
+        </table>
+    <script src="app.js"> </script>
+</body>
+</html>
