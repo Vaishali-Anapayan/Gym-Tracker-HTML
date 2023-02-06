@@ -1,3 +1,7 @@
+// arrays with the machines
+const arms_day = ["chest_press", "shoulder_press", "row_rear_deltoid", "pull_down", "rear_deltoid", "pectoral_fly", "assisted_chin_up", "assisted_dips"];
+
+
 // ARMS DAY
 // creating an array to store my arms day objects
 var selected_arms = null;
@@ -5,46 +9,21 @@ var arms_data = {};
 let arms_information = [];
 function arms_day_submit(e) {
     event.preventDefault();
-    var form_data = read_log_data();
+    var data = read_log_data();
     if (selected_arms === null) {
-        insert_arms_data(form_data);
+        insert_arms_data(data);
     } else {
-        update_arms(form_data);
+        update_arms(data);
     }
     reset_arms();
 }
 // retrieve the data
 function read_log_data() {
-    var form_data = {};
-    form_data["chest_press"] = document.getElementById("chest_press").value;
-    form_data["shoulder_press"] = document.getElementById("shoulder_press").value;
-    form_data["row_rear_deltoid"] = document.getElementById("row_rear_deltoid").value;
-    form_data["pull_down"] = document.getElementById("pull_down").value;
-    form_data["rear_deltoid"] = document.getElementById("rear_deltoid").value;
-    form_data["pectoral_fly"] = document.getElementById("pectoral_fly").value;
-    form_data["assisted_chin_up"] = document.getElementById("assisted_chin_up").value;
-    form_data["assisted_dips"] = document.getElementById("assisted_dips").value;
-    return form_data;
-}
-// save the data local storage
-function save_arms_data() {
-    arms_information = JSON.parse(localStorage.getItem("arms_day"));
-    if (localStorage.getItem("arms_day") == null) {
-        arms_information = [];
+    var data = {};
+    for (let i = 0; i < arms_day.length; i++) {
+        data[arms_day[i]] = document.getElementById(arms_day[i]).value;
     }
-    let arms_day = {
-        chest_press: arms_data.chest_press,
-        shoulder_press: arms_data.shoulder_press,
-        row_rear_deltoid: arms_data.row_rear_deltoid,
-        pull_down: arms_data.pull_down,
-        rear_deltoid: arms_data.rear_deltoid,
-        pectoral_fly: arms_data.pectoral_fly,
-        assisted_chin_up: arms_data.assisted_chin_up,
-        assisted_dips: arms_data.assisted_dips
-    };
-    alert(arms_data.chest_press);
-    arms_information.push(arms_day);
-    localStorage.setItem("arms_day", JSON.stringify(arms_information));
+    return data;
 }
 // insert the data
 function insert_arms_data(data) {
@@ -70,17 +49,31 @@ function insert_arms_data(data) {
     arms_data = data;
         cell9.innerHTML = `<button id="options" onClick="save_arms_data()">Save</button> <button id="options" onClick="delete_arms(this)">Delete</button>`;
 }
+// save the data local storage
+function save_arms_data() {
+    arms_information = JSON.parse(localStorage.getItem("arms_day"));
+    if (localStorage.getItem("arms_day") == null) {
+        arms_information = [];
+    }
+    let arms_day = {
+        chest_press: arms_data.chest_press,
+        shoulder_press: arms_data.shoulder_press,
+        row_rear_deltoid: arms_data.row_rear_deltoid,
+        pull_down: arms_data.pull_down,
+        rear_deltoid: arms_data.rear_deltoid,
+        pectoral_fly: arms_data.pectoral_fly,
+        assisted_chin_up: arms_data.assisted_chin_up,
+        assisted_dips: arms_data.assisted_dips
+    };
+    arms_information.push(arms_day);
+    localStorage.setItem("arms_day", JSON.stringify(arms_information));
+}
 // edit the data
 function edit_arms(td) {
     selected_arms = td.parentElement.parentElement;
-    document.getElementById("chest_press").value = selected_arms.cells[0].innerHTML;
-    document.getElementById("shoulder_press").value = selected_arms.cells[1].innerHTML;
-    document.getElementById("row_rear_deltoid").value = selected_arms.cells[2].innerHTML;
-    document.getElementById("pull_down").value = selected_arms.cells[3].innerHTML;
-    document.getElementById("rear_deltoid").value = selected_arms.cells[4].innerHTML;
-    document.getElementById("pectoral_fly").value = selected_arms.cells[5].innerHTML;
-    document.getElementById("assisted_chin_up").value = selected_arms.cells[6].innerHTML;
-    document.getElementById("assisted_dips").value = selected_arms.cells[7].innerHTML;
+    for (let i = 0; i < arms_day.length; i++) {
+        document.getElementById(arms_day[i]).value = selected_arms.cells[i].innerHTML;
+    }
 }
 // update the data
 function update_arms(form_data) {
@@ -104,14 +97,9 @@ function delete_arms(td) {
 }
 // reset the data
 function reset_arms() {
-    document.getElementById("chest_press").value = "";
-    document.getElementById("shoulder_press").value = "";
-    document.getElementById("row_rear_deltoid").value = "";
-    document.getElementById("pull_down").value = "";
-    document.getElementById("rear_deltoid").value = "";
-    document.getElementById("pectoral_fly").value = "";
-    document.getElementById("assisted_chin_up").value = "";
-    document.getElementById("assisted_dips").value = "";
+    for (let i = 0; i < arms_day.length; i++) {
+        document.getElementById(arms_day[i]).value = "";
+    }
 }
 
 
@@ -469,4 +457,13 @@ function reveal_history() {
         var cell3 = new_row.insertCell(2);
             cell3.innerHTML = stair_master_info[i].stair_pace;
     }
+}
+
+
+
+function delete_history() {
+    localStorage.removeItem("arms_day");
+    localStorage.removeItem("legs_day");
+    localStorage.removeItem("treadmill_day");
+    localStorage.removeItem("stair_master_day");
 }
